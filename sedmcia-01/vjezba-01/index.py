@@ -52,3 +52,5 @@ birthdays = ["6.9.2004", "12.5.2002", "26.12.1999", "26.12.1999", "5.7.2001", "6
 uniqueBirthdays = set(birthdays)
 
 print(f"Ukupno ima {len(birthdays)} rodjendana, a od toga {len(uniqueBirthdays)} unikatnih rodjendana, sto znaci da ima {len(birthdays) - len(uniqueBirthdays)} istih datuma!")
+
+
