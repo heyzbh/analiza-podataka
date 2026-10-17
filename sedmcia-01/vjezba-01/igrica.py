@@ -49,18 +49,15 @@ robot_smjer = ">"  # robot na pocetku gleda desno
 # ---------- SENZORI ----------
 
 def polje_ispred():
-    # Vraca znak koji se nalazi na polju ispred robota
     dr, dk = smjerovi[robot_smjer]
     return mapa[robot_red + dr][robot_kolona + dk]
 
 
 def je_zid():
-    # True ako je ispred robota zid
     return polje_ispred() == "#"
 
 
 def je_dijamant():
-    # True ako je ispred robota dijamant
     return polje_ispred() == "D"
 
 
