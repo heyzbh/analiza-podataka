@@ -1,5 +1,6 @@
 import random
 from datetime import date, timedelta
+from matplotlib import pyplot as plt
 from collections import Counter
 
 def testBirthdays():
@@ -98,3 +99,39 @@ def prikazi(zadaci):
     for i, z in enumerate(zadaci, start=1):
         oznaka = "x" if z["gotovo"] else " "
         print(f"{i}, [{oznaka}]")
+
+
+
+
+
+
+mjeseci = [0] * 12
+
+with open("real_birthdays.txt", "r") as file:
+    for line in file:
+        line = line.strip()
+        if line == "":
+            continue
+        dan, mjesec = line.split("-")
+        mjeseci[int(mjesec) - 1] += 1
+
+print(mjeseci)
+
+nazivi = ["Jan", "Feb", "Mar", "Apr", "Maj", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dec"]
+
+boje = []
+for broj in mjeseci:
+    if broj == max(mjeseci):
+        boje.append("red")
+    else:
+        boje.append("skyblue")
+
+plt.bar(nazivi, mjeseci, color=boje)
+plt.title("Rodjendani po mjesecima")
+plt.xlabel("Mjesec")
+plt.ylabel("Broj rodjendana")
+
+for i in range(12):
+    plt.text(i, mjeseci[i], mjeseci[i], ha="center", va="bottom")
+
+plt.show()
