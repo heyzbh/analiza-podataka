@@ -39,7 +39,7 @@ robot_kolona = 0
 for r in range(len(mapa)):
     for k in range(len(mapa[r])):
         if mapa[r][k] == "R":
-            robot_red = r
+            robot_red = r;
             robot_kolona = k
             mapa[r][k] = " "
 
