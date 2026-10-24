@@ -53,3 +53,48 @@ def analyze_birthdays():
 
 analyze_birthdays()
 
+
+x = [4,1,2,3]
+y = sorted(x)
+x.sort()
+
+sorted(x, reverse=True)
+sorted([-4,1,-2,3],key=abs)
+
+# [1,-2,3,-4]
+rijeci= ["cao","pozdrav","hello"]
+print(sorted(rijeci, key=len))
+
+
+
+#####
+imena = ["Ana","Emir"]
+god = [20, 22]
+
+print(list(zip(imena, god)))
+
+
+## zadatak 2
+studenti = ["Amra","Emir","Lejla","Tarik","Ana"]
+bodovi = [78,92,65,88,92]
+
+print(list(zip(studenti, bodovi)))
+
+
+
+for i in range(len(studenti)):
+    if(bodovi[i]>=80):
+        print(f"Student: {studenti[i]}, bodovi:{bodovi[i]}")
+
+
+
+def dodaj(zadaci, naziv, prioritet=2):
+    if naziv == "":
+        print("naziv ne moze biti prazan")
+        return
+    zadaci.append({"naziv":naziv})
+
+def prikazi(zadaci):
+    for i, z in enumerate(zadaci, start=1):
+        oznaka = "x" if z["gotovo"] else " "
+        print(f"{i}, [{oznaka}]")
