@@ -4,7 +4,6 @@ import time
 import os
 
 # Mapa lavirinta
-# '#' = zid, ' ' = prazno polje, 'D' = dijamant, 'R' = start robota
 lavirint = [
     "##########",
     "#R   #   #",
@@ -17,7 +16,7 @@ lavirint = [
     "##########",
 ]
 
-# pretvaramo svaki red u listu da mozemo mijenjati polja
+# each row to list
 mapa = [list(red) for red in lavirint]
 
 # Ssmjerovi
@@ -76,10 +75,6 @@ def okreni_lijevo():
 # ---------- MOZAK ----------
 
 def odluci_smjer():
-    # Pravilo desne ruke:
-    # 1. Prvo se okreni desno
-    # 2. Dok je ispred zid, okreci se lijevo
-    # Tako robot nikad ne udari u zid.
     okreni_desno()
     while je_zid():
         okreni_lijevo()
